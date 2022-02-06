@@ -1,0 +1,35 @@
+{
+	"name": "lyrics-searcher-musixmatch",
+	"version": "1.0",
+	"description": "Fork of the NPM package songlyrics (https://www.npmjs.com/package/songlyrics)",
+	"keywords": [
+		"lyrics",
+		"musixmatch",
+		"scrape"
+	],
+	"scripts": {
+		"ts:watch": "ts-node-dev --respawn --transpile-only --poll ./src/index.ts",
+		"ts:build": "rm -rf ./build && tsc",
+		"pretty": "prettier --write .",
+		"example": "node ./example.js"
+	},
+	"main": "build/index.js",
+	"repository": "https://github.com/Boxy-Boy-Bot/lyrics-searcher-musixmatch",
+	"author": "AntogamerYT",
+	"license": "MIT",
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.10",
+		"duck-duck-scrape": "^2.1.5",
+		"got": "^11.8.2",
+		"user-agents": "^1.0.793"
+	},
+	"devDependencies": {
+		"@types/node": "^16.10.2",
+		"@types/user-agents": "^1.0.2",
+		"mocha": "^9.1.2",
+		"prettier": "^2.4.1",
+		"supertest": "^6.1.6",
+		"ts-node-dev": "^1.1.8",
+		"typescript": "^4.4.3"
+	}
+}
