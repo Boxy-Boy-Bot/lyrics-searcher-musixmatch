@@ -11,9 +11,9 @@ npm install https://github.com/Boxy-Boy-Bot/lyrics-searcher-musixmatch.git --sav
 ## How to Use
 
 ```js
-const lyrics-searcher-musixmatch = require('lyrics-searcher-musixmatch').default
+const lyricssearchermusixmatch = require('lyrics-searcher-musixmatch').default
 
-lyrics-searcher-musixmatch('Never Gonna Give You Up')
+lyricssearchermusixmatch('Never Gonna Give You Up')
 	.then((lyrics) => console.log(lyrics))
 	.catch(console.warn)
 	
@@ -28,12 +28,12 @@ lyrics-searcher-musixmatch('Never Gonna Give You Up')
 // }
 
 // Get song name
-lyrics-searcher-musixmatch('Never Gonna Give You Up')
+lyricssearchermusixmatch('Never Gonna Give You Up')
 	.then(lyrics => console.log(lyrics.info.track.name)) //logs the song name in the console
 	.catch(console.warn)
 	
 // Get artist name
-lyrics-searcher-musixmatch('Never Gonna Give You Up')
+lyricssearchermusixmatch('Never Gonna Give You Up')
 	.then(lyrics => console.log(lyrics.info.track.artist.name)) //logs the artist name in the console
 	.catch(console.warn)
 ```
