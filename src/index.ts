@@ -7,6 +7,7 @@ import sources from './sources'
 async function songlyrics(title: string): Promise<Lyrics> {
 	title = title.toLowerCase()
 	const f = '%s site:%s'
+	try{ 
 		for (const source of sources) {
 			const site = `${source.hostname}${source.path}`
 			const url = await searchDuckduckgo(format(f, title, site))
@@ -24,7 +25,7 @@ async function songlyrics(title: string): Promise<Lyrics> {
 				}
 			}
 		}
-
+	} catch(err) {}
 	throw new Error("No lyrics found!")
 }
 

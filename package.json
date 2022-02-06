@@ -1,6 +1,6 @@
 {
 	"name": "lyrics-searcher-musixmatch",
-	"version": "1.0",
+	"version": "1.0.2",
 	"description": "Fork of the NPM package songlyrics (https://www.npmjs.com/package/songlyrics)",
 	"keywords": [
 		"lyrics",

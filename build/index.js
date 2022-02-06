@@ -20,23 +20,26 @@ function songlyrics(title) {
     return __awaiter(this, void 0, void 0, function* () {
         title = title.toLowerCase();
         const f = '%s site:%s';
-        for (const source of sources_1.default) {
-            const site = `${source.hostname}${source.path}`;
-            const url = yield (0, util_1.searchDuckduckgo)((0, util_2.format)(f, title, site));
-            if (url.includes(site.toLowerCase())) {
-                const res = yield (0, util_1.request)(url);
-                let lyrics = source.parse(cheerio_1.default.load(res));
-                if (lyrics) {
-                    const sourceLyrics = {
-                        name: source.name,
-                        url: `https://${source.hostname}`,
-                        link: url,
-                    };
-                    const result = { lyrics: (0, util_1.spacingLyrics)(lyrics[0]), info: lyrics[1].page, source: sourceLyrics };
-                    return result;
+        try {
+            for (const source of sources_1.default) {
+                const site = `${source.hostname}${source.path}`;
+                const url = yield (0, util_1.searchDuckduckgo)((0, util_2.format)(f, title, site));
+                if (url.includes(site.toLowerCase())) {
+                    const res = yield (0, util_1.request)(url);
+                    let lyrics = source.parse(cheerio_1.default.load(res));
+                    if (lyrics) {
+                        const sourceLyrics = {
+                            name: source.name,
+                            url: `https://${source.hostname}`,
+                            link: url,
+                        };
+                        const result = { lyrics: (0, util_1.spacingLyrics)(lyrics[0]), info: lyrics[1].page, source: sourceLyrics };
+                        return result;
+                    }
                 }
             }
         }
+        catch (err) { }
         throw new Error("No lyrics found!");
     });
 }
