@@ -15,7 +15,7 @@
 	},
 	"main": "build/index.js",
 	"repository": "https://github.com/Boxy-Boy-Bot/lyrics-searcher-musixmatch",
-	"author": "AntogamerYT",
+	"author": "antogamer",
 	"license": "MIT",
 	"dependencies": {
 		"cheerio": "^1.0.0-rc.10",
