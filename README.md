@@ -1,49 +1,43 @@
-# songlyrics
+# lyrics-searcher-musixmatch
 
-Search song lyrics. It scrape the lyrics from musixmatch and others.
-
-<p>
-  <a href="https://www.npmjs.com/package/songlyrics">
-    <img src="https://img.shields.io/npm/v/songlyrics.svg" alt="version" />
-  </a>
-   <a href="https://packagephobia.now.sh/result?p=songlyrics">
-    <img src="https://packagephobia.now.sh/badge?p=songlyrics" alt="install size" />
-  </a>
-</p>
+Fork of the NPM package songlyrics (https://www.npmjs.com/package/songlyrics)
 
 ## Getting started
 
 ```shell
-npm install songlyrics --save
-```
-
-or
-
-```shell
-yarn add songlyrics
+npm install https://github.com/Boxy-Boy-Bot/lyrics-searcher-musixmatch.git --save
 ```
 
 ## How to Use
 
 ```js
-const songlyrics = require('songlyrics').default
+const lyrics-searcher-musixmatch = require('lyrics-searcher-musixmatch').default
 
-songlyrics('breezeblocks')
+lyrics-searcher-musixmatch('Never Gonna Give You Up')
 	.then((lyrics) => console.log(lyrics))
 	.catch(console.warn)
+	
 
 // {
-//   lyrics: 'She may contain the urge to run away....',
+//   lyrics: 'We're no strangers to love....',
 //   source: {
 //     name: 'Musixmatch',
 //     url: 'https://www.musixmatch.com',
-//     link: 'https://www.musixmatch.com/lyrics/alt-J-6/Breezeblocks-2'
+//     link: 'https://www.musixmatch.com/lyrics/Rick-Astley/Never-Gonna-Give-Up'
 //   }
 // }
+
+// Get song name
+lyrics-searcher-musixmatch('Never Gonna Give You Up')
+	.then(lyrics => console.log(lyrics.info.track.name)) //logs the song name in the console
+	.catch(console.warn)
+	
+// Get artist name
+lyrics-searcher-musixmatch('Never Gonna Give You Up')
+	.then(lyrics => console.log(lyrics.info.track.artist.name)) //logs the artist name in the console
+	.catch(console.warn)
 ```
 
 ## Lyrics provided by
 
 - [Musixmatch](https://www.musixmatch.com)
-- [IndoLirik](https://indolirik.jspinyin.net)
-- Mores
